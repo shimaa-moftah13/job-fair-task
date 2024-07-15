@@ -34,11 +34,12 @@ function App() {
     setFilteredTransactions(filtered);
     setTransactionsId(transactions.filter(transaction => transaction.customer_id === parseInt(customerId)));
   };
+ 
   const handleFilterAmount = (amount) => {
     let filtered = transactionsId;
-      filtered = filtered.filter(transaction => transaction.amount >= parseInt(amount));
+      filtered = filtered.filter(transaction => transaction.amount === parseInt(amount));
     setFilteredTransactions(filtered);
-    setTransactionsAmount(transactions.filter(transaction => transaction.amount >= parseInt(amount)))
+    setTransactionsAmount(transactions.filter(transaction => transaction.amount === parseInt(amount)))
   };
 
   const handleSelectCustomer = (customerId) => {
